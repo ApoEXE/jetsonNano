@@ -1,0 +1,18 @@
+Image Size: 422400  Elapsed Time: 12.7964 msecs
+
+Image Size: 1689600  Elapsed Time: 2.7242 msecs
+
+Image Size: 3801600  Elapsed Time: 5.35911 msecs
+
+Image Size: 6758400  Elapsed Time: 9.06131 msecs
+
+Image Size: 10560000  Elapsed Time: 13.6314 msecs
+
+Image Size: 15206400  Elapsed Time: 17.5452 msecs
+
+Image Size: 20697600  Elapsed Time: 21.0528 msecs
+
+Image Size: 27033600  Elapsed Time: 25.1771 msecs
+
+Image Size: 34214400  Elapsed Time: 27.9029 msecs
+

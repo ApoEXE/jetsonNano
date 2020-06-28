@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/jav/wsl/pytorchOpencvPython/opencv/build",
+  "command": "/usr/bin/g++-7   -isystem /usr/local/include/opencv4  -g   -std=gnu++11 -o CMakeFiles/startProject.dir/yolov3_opencv_dnn_cuda.cpp.o -c /home/jav/wsl/pytorchOpencvPython/opencv/cpp/opencv_dnn_cuda_yolov3/yolov3_opencv_dnn_cuda.cpp",
+  "file": "/home/jav/wsl/pytorchOpencvPython/opencv/cpp/opencv_dnn_cuda_yolov3/yolov3_opencv_dnn_cuda.cpp"
+}
+]

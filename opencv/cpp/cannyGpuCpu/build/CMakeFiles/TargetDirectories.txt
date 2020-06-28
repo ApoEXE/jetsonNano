@@ -1,0 +1,3 @@
+/home/jav/wsl/pytorchOpencvPython/opencv/cpp/build/CMakeFiles/rebuild_cache.dir
+/home/jav/wsl/pytorchOpencvPython/opencv/cpp/build/CMakeFiles/startProject.dir
+/home/jav/wsl/pytorchOpencvPython/opencv/cpp/build/CMakeFiles/edit_cache.dir
