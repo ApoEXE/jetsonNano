@@ -32,6 +32,6 @@ kit = ServoKit(channels=16, i2c=i2c_bus0)
 # kit[0] is the bottom servo
 # kit[1] is the top servo
 print("Done initializing")
-kit.servo[0].angle=angle
+kit.servo[15].angle=angle
     
 
