@@ -2,7 +2,7 @@
 #include <opencv2/highgui.hpp>
 #include "dnn_opencv.h"
 
-std::string absPath_weights = "/home/jav/wsl/weights/";
+std::string absPath_weights = "/home/vn/darknet/";
 std::string absPath_img = "/home/jav/wsl/images_videos/";
 std::string classes = absPath_weights + "default/coco.names";
 std::string weights = absPath_weights + "default/yolov3.weights";
@@ -13,7 +13,7 @@ int main(int argc, char const *argv[])
 {
     dnn.load_model(conf, weights, classes);
 
-    cv::VideoCapture cap(0, cv::CAP_V4L);
+    cv::VideoCapture cap("nvarguscamerasrc ! video/x-raw(memory:NVMM), width=(int)2592, height=(int)1458,format=(string)NV12, framerate=(fraction)30/1  ! nvvidconv flip-method=0 ! video/x-raw, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink", cv::CAP_GSTREAMER);
     cv::Mat frame;
     while (cap.isOpened())
     {
