@@ -25,7 +25,7 @@ int main(int argc, char const *argv[])
 
         frame = dnn.inference(frame);
         dnn.getDetections(frame);
-        frame = dnn.drawDetection(frame);
+        //frame = dnn.drawDetection(frame);
         frame = dnn.drawFPS(frame); //Draw FPS
 
         cv::imshow("detections", frame);
