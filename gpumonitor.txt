@@ -1,0 +1,3 @@
+https://pypi.org/project/jetson-stats/
+sudo -H pip install -U jetson-stats
+jtop
