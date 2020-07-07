@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 '''
 **********************************************************************
 * Filename    : Servo.py
@@ -127,7 +127,7 @@ def install(angle):
 	servo = Servo(14)
 	servo.setup()
 	print(angle)
-	servo.write(angle)
+	servo.write(int(angle))
 
 if __name__ == '__main__':
 	import sys
