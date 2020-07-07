@@ -270,5 +270,5 @@ if __name__ == '__main__':
     i = int(sys.argv[1])
     for j in range(4096):
         pwm.write(i, 0, j)
-        print('PWM value: %d ch %d' % j,i)
+        print('PWM value: %d ch %d', j,i)
         time.sleep(0.0003)
