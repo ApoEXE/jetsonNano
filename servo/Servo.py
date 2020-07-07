@@ -121,7 +121,7 @@ def test():
 	for i in range(0, 91, 2):
 		a.write(i)
 		time.sleep(0.05)
-	print(i)
+	print(i, end=" ")
 
 def install(angle):
 	servo = Servo(14)
