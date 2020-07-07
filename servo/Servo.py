@@ -10,6 +10,8 @@
 * Update      : Cavon    2016-09-13    New release
 *               Cavon    2016-09-21    Change channel from 1 to all
 **********************************************************************
+bus_number is the I2C bus on the nano, default i2c_0
+channel is where the pwm is intalled servo
 '''
 
 import PCA9685
@@ -105,7 +107,7 @@ class Servo(object):
 def test():
 	'''Servo driver test on channel 1'''
 	import time
-	a = Servo(15)
+	a = Servo(14)
 	a.setup()
 	for i in range(0, 180, 5):
 		print(i)
