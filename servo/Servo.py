@@ -113,7 +113,7 @@ class Servo(object):
         else:
             print(self._DEBUG_INFO, "Set debug off")
 
-ena = Servo(13)
+ena = Servo(15)
 enb = Servo(14)
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
