@@ -15,6 +15,7 @@ channel is where the pwm is intalled servo
 '''
 
 import PCA9685
+angle = 180
 
 class Servo(object):
 	'''Servo driver class'''
@@ -122,18 +123,16 @@ def test():
 		time.sleep(0.05)
 	print(i)
 
-def install():
-	all_servo = [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
-	for i in range(16):
-		all_servo[i] = Servo(i)
-	for servo in all_servo:
-		servo.setup()
-		servo.write(90)
+def install(angle):
+	servo = Servo(14)
+	servo.setup()
+	print(angle)
+	servo.write(angle)
 
 if __name__ == '__main__':
 	import sys
-	if len(sys.argv) == 2:
+	if len(sys.argv) == 3:
 		if sys.argv[1] == "install":
-			install()
+			install(sys.argv[2])
 	else:
 		test()
