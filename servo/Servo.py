@@ -118,9 +118,6 @@ def signal_handler(sig, frame):
     sys.exit(0)
 
 
-
-
-
 def test():
     ena = Servo(13)
     enb = Servo(14)
@@ -134,4 +131,4 @@ def test():
 
 if __name__ == '__main__':
 	signal.signal(signal.SIGINT, signal_handler)
-    test()
+	test()
