@@ -13,9 +13,10 @@
 bus_number is the I2C bus on the nano, default i2c_0
 channel is where the pwm is intalled servo
 '''
-
-import PCA9685
+import signal
 import time
+import PCA9685
+
 angle = 180
 
 
@@ -112,6 +113,14 @@ class Servo(object):
             print(self._DEBUG_INFO, "Set debug off")
 
 
+def signal_handler(sig, frame):
+    print('You pressed Ctrl+C!')
+    sys.exit(0)
+
+
+
+
+
 def test():
     ena = Servo(13)
     enb = Servo(14)
@@ -122,5 +131,7 @@ def test():
         enb.write(180)
         time.sleep(0.1)
 
+
 if __name__ == '__main__':
+	signal.signal(signal.SIGINT, signal_handler)
     test()
