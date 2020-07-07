@@ -263,11 +263,12 @@ class PWM(object):
 
 if __name__ == '__main__':
     import time
-
+    import sys
     pwm = PWM()
     pwm.frequency = 60
     time.sleep(1)
+    i = int(sys.argv[1])
     for j in range(4096):
-        pwm.write(14, 0, j)
-        print('PWM value: %d' % j)
+        pwm.write(i, 0, j)
+        print('PWM value: %d ch %d' % j,i)
         time.sleep(0.0003)
