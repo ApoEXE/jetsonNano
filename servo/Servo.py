@@ -15,6 +15,7 @@ channel is where the pwm is intalled servo
 '''
 
 import PCA9685
+import time
 angle = 180
 
 class Servo(object):
@@ -107,7 +108,7 @@ class Servo(object):
 
 def test():
 	'''Servo driver test on channel 1'''
-	import time
+	
 	a = Servo(14)
 	a.setup()
 	for i in range(0, 180, 5):
