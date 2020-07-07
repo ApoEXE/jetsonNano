@@ -16,8 +16,10 @@ channel is where the pwm is intalled servo
 import signal
 import time
 import PCA9685
-
+import sys
 angle = 180
+ena = Servo(13)
+enb = Servo(14)
 
 
 class Servo(object):
@@ -115,12 +117,14 @@ class Servo(object):
 
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
+	ena.write(0)
+    enb.write(0)
+    time.sleep(0.1)
     sys.exit(0)
 
 
 def test():
-    ena = Servo(13)
-    enb = Servo(14)
+
     ena.setup()
     enb.setup()
     while(True):
@@ -130,5 +134,5 @@ def test():
 
 
 if __name__ == '__main__':
-  signal.signal(signal.SIGINT, signal_handler)
-  test()
+    signal.signal(signal.SIGINT, signal_handler)
+    test()
