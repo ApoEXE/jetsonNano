@@ -1,5 +1,5 @@
 #!/bin/sh
-git add .
+git add --all
 git commit -m "."
 git push origin master
 echo "DONE"
