@@ -124,7 +124,7 @@ def signal_handler(sig, frame):
 
 
 def test():
-
+    print('Test started')
     ena.setup()
     enb.setup()
     while(True):
