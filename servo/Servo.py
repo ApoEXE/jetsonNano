@@ -126,8 +126,11 @@ def test():
 def install(angle):
 	servo = Servo(14)
 	servo.setup()
+
 	print(angle)
-	servo.write(int(angle))
+	while(True):
+		servo.write(int(angle))
+		time.sleep(0.1)
 
 if __name__ == '__main__':
 	import sys
