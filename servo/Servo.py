@@ -117,7 +117,7 @@ class Servo(object):
 
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
-	ena.write(0)
+    ena.write(0)
     enb.write(0)
     time.sleep(0.1)
     sys.exit(0)
