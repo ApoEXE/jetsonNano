@@ -18,8 +18,7 @@ import time
 import PCA9685
 import sys
 angle = 180
-ena = Servo(13)
-enb = Servo(14)
+
 
 
 class Servo(object):
@@ -114,7 +113,8 @@ class Servo(object):
         else:
             print(self._DEBUG_INFO, "Set debug off")
 
-
+ena = Servo(13)
+enb = Servo(14)
 def signal_handler(sig, frame):
     print('You pressed Ctrl+C!')
     ena.write(0)
