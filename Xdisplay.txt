@@ -1,0 +1,23 @@
+ON NANO SIDE:
+sudo nano /etc/ssh/sshd_config
+X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost no
+
+ON CLIENT SIDE Windows
+Host *
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+
+
+nano .bashrc
+~/.bashrc
+export DISPLAY=localhost:0
+source .bashrc
+
+connect from server
+ssh -X yourusername@yourhost
+
+verify 
+echo $DISPLAY
