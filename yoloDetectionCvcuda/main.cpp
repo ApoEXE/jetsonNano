@@ -2,7 +2,7 @@
 #include <opencv2/highgui.hpp>
 #include "dnn_opencv.h"
 #include <unistd.h>
-std::string absPath_weights = "~/wsl/weights/yolov3-tiny/";
+std::string absPath_weights = "/home/nano/wsl/weights/yolov3-tiny/";
 std::string classes = absPath_weights + "coco.names";
 std::string weights = absPath_weights + "yolov3-tiny.weights";
 std::string conf = absPath_weights + "yolov3-tiny.cfg";
