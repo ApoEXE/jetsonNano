@@ -1,0 +1,4 @@
+test: main.cpp sampleSSD.cpp common/*.cpp
+	g++ -std=c++11 -O3 -march=native -Dcimg_jpeg=1 -Dcimg_display=0 main.cpp sampleSSD.cpp common/*.cpp -o test -lcudnn -lcublas -lcudart -lnvinfer -lnvparsers -lnvinfer_plugin -lnvonnxparser -I./common -I/usr/local/cuda/include -L/usr/local/cuda/lib64 `pkg-config opencv --cflags --libs`
+debug: main.cpp sampleSSD.cpp common/*.cpp
+	g++ -g -std=c++11 -O3 -march=native -Dcimg_jpeg=1 -Dcimg_display=0 main.cpp sampleSSD.cpp common/*.cpp -o test -lcudnn -lcublas -lcudart -lnvinfer -lnvparsers -lnvinfer_plugin -lnvonnxparser -I./common -I/usr/local/cuda/include -L/usr/local/cuda/lib64 `pkg-config opencv --cflags --libs`

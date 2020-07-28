@@ -21,3 +21,5 @@ ssh -X yourusername@yourhost
 
 verify 
 echo $DISPLAY
+
+export DISPLAY="$(/sbin/ip route | awk '/default/ { print $3 }'):0"
