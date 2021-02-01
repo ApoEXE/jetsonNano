@@ -28,7 +28,7 @@ output_pin = 18  # BOARD pin 12, BCM pin 18
 def main():
     # Pin Setup:
     # Board pin-numbering scheme
-    GPIO.setmode(GPIO.BCM)
+    GPIO.setmode(GPIO.BOARD)
     # set pin as an output pin with optional initial state of HIGH
     GPIO.setup(output_pin, GPIO.OUT, initial=GPIO.HIGH)
 
