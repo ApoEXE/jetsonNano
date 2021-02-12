@@ -72,7 +72,7 @@ def open_cam_usb(dev, width, height):
 def open_cam_onboard(width, height):
     gst_elements = str(subprocess.check_output('gst-inspect-1.0'))
     if 'nvcamerasrc' in gst_elements:
-	print('nvcamerasrc')
+        print('nvcamerasrc')
         # On versions of L4T prior to 28.1, add 'flip-method=2' into gst_str
         gst_str = ('nvcamerasrc ! '
                    'video/x-raw(memory:NVMM), '
@@ -82,11 +82,12 @@ def open_cam_onboard(width, height):
                    'video/x-raw, width=(int){}, height=(int){}, '
                    'format=(string)BGRx ! '
                    'videoconvert ! appsink').format(width, height)
+                   #1280 x 720
     elif 'nvarguscamerasrc' in gst_elements:
         print('nvarguscamerasrc')
         gst_str = ('nvarguscamerasrc ! '
                    'video/x-raw(memory:NVMM), '
-                   'width=(int)1920, height=(int)1080, '
+                   'width=(int)1280, height=(int)720, '
                    'format=(string)NV12, framerate=(fraction)30/1 ! '
                    'nvvidconv flip-method=2 ! '
                    'video/x-raw, width=(int){}, height=(int){}, '
@@ -94,6 +95,7 @@ def open_cam_onboard(width, height):
                    'videoconvert ! appsink').format(width, height)
     else:
         raise RuntimeError('onboard camera source not found!')
+
     return cv2.VideoCapture(gst_str, cv2.CAP_GSTREAMER)
 
 
@@ -120,7 +122,10 @@ def read_cam(cap):
                         1.0, (32, 32, 32), 4, cv2.LINE_AA)
             cv2.putText(img, help_text, (10, 20), font,
                         1.0, (240, 240, 240), 1, cv2.LINE_AA)
-        cv2.imshow(WINDOW_NAME, img)
+            # resize image
+        dim = (720, 480)
+        resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
+        cv2.imshow(WINDOW_NAME, resized)
         key = cv2.waitKey(10)
         if key == 27: # ESC key: quit program
             break
